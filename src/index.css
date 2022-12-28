@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-size: 32px;
+}
+
 html,body, #root{
     background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
     background-position: center;

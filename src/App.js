@@ -34,7 +34,7 @@ const App=()=>{
 
     return (
         <div className = "h-screen flex flex-col items-center justify-center mt-4">
-            <h1>Hava Durumu</h1>
+            <h1 className="p-4 text-gray text-3xl">Hava Durumu</h1>
             <HavaDurumu weather={weather} />
         </div>
     )

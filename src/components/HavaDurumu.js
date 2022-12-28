@@ -9,11 +9,11 @@ const HavaDurumu = ({
   }
         
   return (
-    <div className='bg-blue-300 p-3 container mx-auto'>
-        <h3>Şehir: {weather.name} </h3>
+    <div className='bg-blue-300 p-4 container mx-auto inline-flex flex-col justify-center items-center rounded-3xl shadow-2xl'>
+        <h3>Konum: {(weather.name).toUpperCase()} </h3>
         <h4>Gökyüzü Durumu: {weather.weather.map(data=>data.description).join(", ").toUpperCase()} </h4>
-        <p> {weather.main.temp}℃ </p>
-        <p> {new Date(weather.dt*1000).toLocaleDateString()} </p>
+        <p>Sıcaklık: {weather.main.temp} ℃ </p>
+        <p>Tarih: {new Date(weather.dt*1000).toLocaleDateString()} </p>
     </div>
   )
 }
