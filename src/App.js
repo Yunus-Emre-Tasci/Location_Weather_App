@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import axios from "axios"
+import { useState } from "react"
+
+const App=()=>{
+    const [weather, setWeather] = useState()
+
+    const getWeatherData=async(lat,lon)=>{
+        const key=process.env.REACT_APP_WEATHER_API_KEY
+        try {
+            const {
+                data
+            } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}
+`)
+            setWeather(data)
+        } catch (error) {
+            alert("Hata oluştu")
+            
+        }
+    } 
+
+    return <div>Hava Durumu</div>
 }
 
-export default App;
+export default App
