@@ -33,8 +33,8 @@ const App=()=>{
     console.log(latitude,longitude,weather);
 
     return (
-        <div>
-            <h2>Hava Durumu</h2>
+        <div className = "h-screen flex flex-col items-center justify-center mt-4">
+            <h1>Hava Durumu</h1>
             <HavaDurumu weather={weather} />
         </div>
     )

@@ -9,9 +9,9 @@ const HavaDurumu = ({
   }
         
   return (
-    <div>
-        <h3> {weather.name} </h3>
-        <h4> {weather.weather.map(data=>data.description).join(", ")} </h4>
+    <div className='bg-blue-300 p-3 container mx-auto'>
+        <h3>Şehir: {weather.name} </h3>
+        <h4>Gökyüzü Durumu: {weather.weather.map(data=>data.description).join(", ").toUpperCase()} </h4>
         <p> {weather.main.temp}℃ </p>
         <p> {new Date(weather.dt*1000).toLocaleDateString()} </p>
     </div>
